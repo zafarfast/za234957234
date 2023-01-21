@@ -14,8 +14,14 @@ The application will store your previous searches to save you from typing the sa
 # Screenshots
 
 ## Desktop
-
+### Home page
+![alt text](assets/images/screenshot_desktop1.jpg)
+### 5 Day forecast
+![alt text](assets/images/screenshot_desktop2.jpg)
 
 ## Mobile
-
+### Homepage
+![alt text](assets/images/screenshot_mobile1.jpg)
+### 5 Day forecast
+![alt text](assets/images/screenshot_mobile2.jpg)
 
