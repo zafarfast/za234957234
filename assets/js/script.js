@@ -55,7 +55,6 @@ function getWeatherData() {
                     return weatherDetail
                 })
                 .then((weatherDetail) => {
-                    console.log(weatherDetail);
                     document.getElementById('city-name').textContent = cityName;
 
                     //If the user search is not aleady in the array then add the search in the array and display it below 
@@ -143,7 +142,6 @@ function populateSearchHistory()
     if (localStorage.getItem('search-history') != null) //checks if the loacal storage is empty or not
     {
     searchHistory = JSON.parse(localStorage.getItem('search-history'))
-    console.log(searchHistory)
     for(i=0; i<searchHistory.arrayOfPreviousSearches.length; i++)
     {
     var previousSearchesItem = document.createElement('li');
