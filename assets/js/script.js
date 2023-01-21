@@ -4,7 +4,6 @@ var weatherDetail; //stores the data object returned by the API
 var lat; //lattitude
 var lon; //longitude
 var searchHistory = {arrayOfPreviousSearches: []}; //stores user search history
-var date = new Date(); //create a new date object containing today's days
 
 // getWeatherData() function runs when user clicks on the search button. It fetches the data from API and displays it on the page
 function getWeatherData() {
@@ -96,39 +95,38 @@ function getWeatherData() {
                     fetch(fiveDayForcastEndpoint).then((response) => { return response.json() }).then((data) => {
 
                         //Display forecast data to the 5-Days forecast section
-                        console.log(data)
-                        var dayOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-                        //date.getDay() returns a number corresponding to the day of the week (e.g. Saturday = 6, Sunday=7)
-                        document.getElementById('forecastDay1').textContent = dayOfTheWeek[date.getDay() % 7]
+
+                        //Spliting the text date and re-arranging it to match the required date format and displaying it
+                        document.getElementById('forecastDay1').textContent = data.list[0].dt_txt.split(" ")[0].split("-")[2] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[1] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[0]
                         document.getElementById('weather-icon1').setAttribute('src', "https://openweathermap.org/img/wn/" + data.list[0].weather[0].icon + ".png")
                         //Weather forecast data sends data in 3 hours intervals for each day. We have been asked to select temp value of any interval of the day.
                         document.getElementById('day1-temp').textContent = "Temp: " + Math.floor((data.list[0].main.temp * 9) / 5 - 459.67) + "°F"
                         document.getElementById('day1-humidity').textContent = "Humidity: " + data.list[0].main.humidity + "%";
                         document.getElementById('day1-wind-speed').textContent = "Wind Speed: " + Math.floor(data.list[0].wind.speed) + "MPH";
 
-                        document.getElementById('forecastDay2').textContent = dayOfTheWeek[(date.getDay() + 1) % 7]
+                        document.getElementById('forecastDay2').textContent = data.list[8].dt_txt.split(" ")[0].split("-")[2] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[1] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[0]
                         document.getElementById('weather-icon2').setAttribute('src', "https://openweathermap.org/img/wn/" + data.list[8].weather[0].icon + ".png")
                         document.getElementById('day2-temp').textContent = "Temp: " + Math.floor((data.list[8].main.temp * 9) / 5 - 459.67) + "°F"
                         document.getElementById('day2-humidity').textContent = "Humidity: " + data.list[8].main.humidity + "%";
                         document.getElementById('day2-wind-speed').textContent = "Wind Speed: " + Math.floor(data.list[8].wind.speed) + "MPH";
 
-                        document.getElementById('forecastDay3').textContent = dayOfTheWeek[(date.getDay() + 2) % 7]
+                        document.getElementById('forecastDay3').textContent = data.list[16].dt_txt.split(" ")[0].split("-")[2] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[1] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[0]
                         document.getElementById('weather-icon3').setAttribute('src', "https://openweathermap.org/img/wn/" + data.list[16].weather[0].icon + ".png")
                         document.getElementById('day3-temp').textContent = "Temp: " + Math.floor((data.list[16].main.temp * 9) / 5 - 459.67) + "°F"
                         document.getElementById('day3-humidity').textContent = "Humidity: " + data.list[16].main.humidity + "%";
                         document.getElementById('day3-wind-speed').textContent = "Wind Speed: " + Math.floor(data.list[16].wind.speed) + "MPH";
 
-                        document.getElementById('forecastDay4').textContent = dayOfTheWeek[(date.getDay() + 3) % 7]
+                        document.getElementById('forecastDay4').textContent = data.list[24].dt_txt.split(" ")[0].split("-")[2] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[1] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[0]
                         document.getElementById('weather-icon4').setAttribute('src', "https://openweathermap.org/img/wn/" + data.list[32].weather[0].icon + ".png")
-                        document.getElementById('day4-temp').textContent = "Temp: " + Math.floor((data.list[32].main.temp * 9) / 5 - 459.67) + "°F"
-                        document.getElementById('day4-humidity').textContent = "Humidity: " + data.list[32].main.humidity + "%";
-                        document.getElementById('day4-wind-speed').textContent = "Wind Speed: " + Math.floor(data.list[32].wind.speed) + "MPH";
+                        document.getElementById('day4-temp').textContent = "Temp: " + Math.floor((data.list[24].main.temp * 9) / 5 - 459.67) + "°F"
+                        document.getElementById('day4-humidity').textContent = "Humidity: " + data.list[24].main.humidity + "%";
+                        document.getElementById('day4-wind-speed').textContent = "Wind Speed: " + Math.floor(data.list[24].wind.speed) + "MPH";
 
-                        document.getElementById('forecastDay5').textContent = dayOfTheWeek[(date.getDay() + 4) % 7]
+                        document.getElementById('forecastDay5').textContent = data.list[32].dt_txt.split(" ")[0].split("-")[2] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[1] +"/"+ data.list[0].dt_txt.split(" ")[0].split("-")[0]
                         document.getElementById('weather-icon5').setAttribute('src', "https://openweathermap.org/img/wn/" + data.list[39].weather[0].icon + ".png")
-                        document.getElementById('day5-temp').textContent = "Temp: " + Math.floor((data.list[39].main.temp * 9) / 5 - 459.67) + "°F"
-                        document.getElementById('day5-humidity').textContent = "Humidity: " + data.list[39].main.humidity + "%";
-                        document.getElementById('day5-wind-speed').textContent = "Wind Speed: " + Math.floor(data.list[39].wind.speed) + "MPH";
+                        document.getElementById('day5-temp').textContent = "Temp: " + Math.floor((data.list[32].main.temp * 9) / 5 - 459.67) + "°F"
+                        document.getElementById('day5-humidity').textContent = "Humidity: " + data.list[32].main.humidity + "%";
+                        document.getElementById('day5-wind-speed').textContent = "Wind Speed: " + Math.floor(data.list[32].wind.speed) + "MPH";
                     })
 
 
@@ -142,7 +140,7 @@ function getWeatherData() {
 // Code starts here. The two event listeners below waits for the user to click on the search button
 function populateSearchHistory()
 {
-    if (localStorage.getItem('search-history') != null)
+    if (localStorage.getItem('search-history') != null) //checks if the loacal storage is empty or not
     {
     searchHistory = JSON.parse(localStorage.getItem('search-history'))
     console.log(searchHistory)
@@ -171,4 +169,5 @@ document.getElementById('search-box').addEventListener("keypress", (event) => {
     }
 });
 
+//populateSearchHistory() looks for previous searches in the local storage on page load and populates it on the search section
 populateSearchHistory();
