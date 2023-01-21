@@ -142,10 +142,10 @@ function getWeatherData() {
 // Code starts here. The two event listeners below waits for the user to click on the search button
 function populateSearchHistory()
 {
+    if (localStorage.getItem('search-history') != null)
+    {
     searchHistory = JSON.parse(localStorage.getItem('search-history'))
     console.log(searchHistory)
-    if (searchHistory != null)
-    {
     for(i=0; i<searchHistory.arrayOfPreviousSearches.length; i++)
     {
     var previousSearchesItem = document.createElement('li');
@@ -153,7 +153,7 @@ function populateSearchHistory()
     document.getElementById('previous-searches').appendChild(previousSearchesItem);
     document.getElementById('previous-searches').lastChild.addEventListener("click", applyEventListner);
     }
-    }  
+    }
 
 }
 
