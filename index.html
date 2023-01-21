@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS  -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Favourite icon -->
+    <link rel="shortcut icon" type="image/jpg" href="favicon.png" /> 
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <!-- Header section  -->
+    
+    <header>
+        <div class="header-section">
+            <img src="assets/images/cloud-icon2.svg" alt="logo" class="logo">
+            <p>Weather Dashboard</p>
+        </div>
+    </header>
+
+    <!-- Search section  -->
+
+    <section class="search-section search-section-animate">
+        <img src="assets/images/clouds.svg" alt="clouds" class="clouds clouds-animate">
+        <p id="tag-line" class="tag-line-animate"><i> A simple app to help plan your trips!</i></p>
+        <p id="error-message"> </p>
+        <span id="search-icon">⌕</span>
+        <input type="search" id="search-box" placeholder="Type the city name here.." autocomplete="off"></input>
+        <input type="button" value="Search" id="search-button">
+        <p id="previous-searches"></p>
+    </section>
+
+    <!-- Display weather section  -->
+
+    <section class="display-weather ">
+
+        <!-- Today's weather section  -->
+
+        <div class="today-weather-text">
+            <div class="weather-readings">
+                <p class="heading2" id="city-name"></p>
+                <img src="" alt="weather icon" id="weather-icon">
+                <p id="today-current-temp" class="heading2"> </p>
+            </div>
+
+            <div class="weather-readings">
+                <p id="feels-like-temp"> </p>
+                <p id="today-humidity"></p>
+                <P id="today-wind-speed"></p>
+            </div>
+        </div>
+
+        <!-- 5 Days forecast section  -->
+
+        <p class="heading2" id="weather-readings">5 Days Forecast</p>
+        <div class="forecast">
+
+            <!-- Day-1  -->
+
+            <div class="days day1 ">
+                <div class="forecast-heading">
+                    <span class="heading2" id="forecastDay1"></span>
+                    <img src="" alt="weather icon" id="weather-icon1">
+                </div>
+                <p id="day1-temp"></p>
+                <p id="day1-humidity"></p>
+                <P id="day1-wind-speed"></P>
+            </div>
+
+            <!-- Day-2  -->
+
+            <div class="days day2">
+                <div class="forecast-heading">
+                    <span class="heading2" id="forecastDay2"></span>
+                    <img src="" alt="weather icon" id="weather-icon2">
+                </div>
+                <p id="day2-temp"></p>
+                <p id="day2-humidity"></p>
+                <P id="day2-wind-speed"></P>
+            </div>
+
+            <!-- Day-3  -->
+
+            <div class="days day3">
+                <div class="forecast-heading">
+                    <span class="heading2" id="forecastDay3"></span>
+                    <img src="" alt="weather icon" id="weather-icon3">
+                </div>
+                <p id="day3-temp"></p>
+                <p id="day3-humidity"></p>
+                <P id="day3-wind-speed"></P>
+            </div>
+
+            <!-- Day-4  -->
+
+            <div class="days day4">
+                <div class="forecast-heading">
+                    <span class="heading2" id="forecastDay4"></span>
+                    <img src="" alt="weather icon" id="weather-icon4">
+                </div>
+                <p id="day4-temp"></p>
+                <p id="day4-humidity"></p>
+                <P id="day4-wind-speed"></P>
+            </div>
+
+            <!-- Day-5  -->
+
+            <div class="days day5">
+                <div class="forecast-heading">
+                    <span class="heading2" id="forecastDay5"></span>
+                    <img src="" alt="weather icon" id="weather-icon5">
+                </div>
+                <p id="day5-temp"></p>
+                <p id="day5-humidity"></p>
+                <P id="day5-wind-speed"></P>
+            </div>
+
+        </div>
+
+    </section>
+    
+    <!-- Javascript  -->
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
