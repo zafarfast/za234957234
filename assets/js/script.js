@@ -16,7 +16,7 @@ function getWeatherData() {
     cityName = cityName.charAt(0).toUpperCase() + slice.toLowerCase();
 
     //place the city name into the API endpoint URL and store it to coordinateRequestUrl variable
-    var coordinateRequestUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=5716c3001ebc17b2b097de37762da425";
+    var coordinateRequestUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=5716c3001ebc17b2b097de37762da425";
 
     //send GET request to Openweather API to get lattitude and logitudes of the city
     fetch(coordinateRequestUrl)
