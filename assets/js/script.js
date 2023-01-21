@@ -144,7 +144,8 @@ function populateSearchHistory()
 {
     searchHistory = JSON.parse(localStorage.getItem('search-history'))
     console.log(searchHistory)
-
+    if (searchHistory != null)
+    {
     for(i=0; i<searchHistory.arrayOfPreviousSearches.length; i++)
     {
     var previousSearchesItem = document.createElement('li');
@@ -152,6 +153,7 @@ function populateSearchHistory()
     document.getElementById('previous-searches').appendChild(previousSearchesItem);
     document.getElementById('previous-searches').lastChild.addEventListener("click", applyEventListner);
     }
+    }  
 
 }
 
