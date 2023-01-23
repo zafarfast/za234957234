@@ -11,6 +11,11 @@ Simply enter the city name in the search bar on the home page and the app will f
 
 The application will store your previous searches to save you from typing the same search in future. Simple click on the city you like to search from the history and the app will get it for you.
 
+# Links
+
+### Website:  https://zafarfast.github.io/za234957234/
+### Github: https://github.com/zafarfast/za234957234/
+
 # Screenshots
 
 ## Desktop
